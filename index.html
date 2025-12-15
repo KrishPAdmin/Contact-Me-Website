@@ -203,6 +203,26 @@
       </div>
     </section>
 
+    <section id="projects" class="sec-pad" style="padding-top: 0;">
+      <div class="main-container">
+        <div class="glass-panel contact__panel">
+          <h2 class="heading heading-sec heading-sec__mb-med" style="margin-bottom: 3.5rem;">
+            <span class="heading-sec__main">Projects</span>
+            <span class="heading-sec__sub">
+              Quick links to a few places you might want to check out.
+            </span>
+          </h2>
+
+          <div style="display:flex; flex-wrap:wrap; gap:1.2rem; justify-content:center;">
+            <a class="btn btn--med btn--theme" href="https://krishadmin.com" target="_blank" rel="noopener noreferrer">Portfolio</a>
+            <a class="btn btn--med btn--theme" href="https://server.krishadmin.com" target="_blank" rel="noopener noreferrer">Servers</a>
+            <a class="btn btn--med btn--theme" href="https://notes.krishadmin.com" target="_blank" rel="noopener noreferrer">Notes</a>
+            <a class="btn btn--med btn--theme" href="https://co-op.krishadmin.com" target="_blank" rel="noopener noreferrer">Co-op</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer class="main-footer" aria-label="Footer">
       <div class="glass-panel footer__panel">
         <div class="main-footer__upper">
@@ -335,16 +355,21 @@
 
       [hidden] { display: none !important; }
 
+      /* FIXED WALLPAPER: triangle SVG layer repeats and has a fallback path */
       body::before {
         content: "";
         position: fixed;
         inset: 0;
         z-index: -2;
-        background:
-          linear-gradient(to right, rgba(0, 0, 0, 0.80), rgba(37, 44, 49, 0.80)),
-          url("./svg/common-bg.svg");
-        background-position: center;
-        background-size: cover;
+
+        background-image:
+          linear-gradient(to right, rgba(0, 0, 0, 0.55), rgba(37, 44, 49, 0.55)),
+          url("./svg/common-bg.svg"),
+          url("/svg/common-bg.svg");
+        background-repeat: no-repeat, repeat, repeat;
+        background-position: center, center, center;
+        background-size: cover, 1100px auto, 1100px auto;
+
         pointer-events: none;
       }
 
@@ -697,7 +722,6 @@
         flex-wrap: wrap;
       }
 
-      /* UPDATED SEGMENT (as requested) */
       .footer-emails {
         color: var(--textOnGlass);
         font-size: 1.3rem;
